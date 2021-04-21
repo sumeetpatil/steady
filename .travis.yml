@@ -13,5 +13,6 @@ matrix:
     - echo "test"
     script:
     - ( cd docker && echo "test" )
-    - ( cd docker && docker build -t steady-pipeline:${VULAS_RELEASE} pipeline )
+    - pwd
+    - ( cd docker/pipeline && docker build . -t steady-pipeline:${VULAS_RELEASE} )
     - docker run -d steady-pipeline:${VULAS_RELEASE}
