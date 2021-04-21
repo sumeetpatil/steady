@@ -13,4 +13,5 @@ matrix:
     - echo "Hello World!"
     script:
     - ( cd docker && echo "test" )
+    - pwd
     - ( cd docker && docker build -t steady-pipeline:${VULAS_RELEASE} pipeline )
